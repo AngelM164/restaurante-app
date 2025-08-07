@@ -1,5 +1,4 @@
-// API Configuration
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://restaurante-app-production.up.railway.app/api';
 
 // Global variables
 let currentUser = null;
