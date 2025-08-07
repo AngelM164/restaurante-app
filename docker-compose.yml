@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  laravel:
+    build:
+      context: .
+    volumes:
+      - ./Backend-main:/var/www/html
+    expose:
+      - 9000
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8000:80"
+    volumes:
+      - ./Backend-main:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - laravel
+
+  frontend:
+    image: nginx:alpine
+    volumes:
+      - ./Frontend:/usr/share/nginx/html:ro
+    ports:
+      - "3000:80"
+
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: laravel
+      POSTGRES_USER: laravel
+      POSTGRES_PASSWORD: laravel
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+volumes:
+  dbdata:

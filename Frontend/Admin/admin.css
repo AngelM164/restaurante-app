@@ -1,0 +1,182 @@
+/* General styles */
+body {
+    font-family: 'Playfair Display', serif;
+    background: #f7f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background: #ffffff;
+    color: #d4af37;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #d4af37;
+}
+
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+/* Oculta todas las secciones excepto la activa */
+main section {
+    display: none;
+}
+
+main section.active {
+    display: block;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+section h3 {
+    margin-top: 0;
+    color: #232946;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #faf5f6;
+    padding-bottom: 0.5rem;
+}
+
+button {
+    background: #232946;
+    color: #fff;
+    background-color: #d4af37;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #030300e0;
+    color: #ffffff;
+}
+
+#userList, #productList, #mesaList, #pedidoList {
+    margin-top: 1rem;
+}
+
+.admin-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f0f0f5;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.admin-list-item span {
+    font-weight: 500;
+}
+
+.admin-list-item button {
+    margin-left: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.95rem;
+}
+
+.admin-list-item,
+#userList > div,
+#mesaList > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f0f0f5;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.admin-list-item .button-group,
+#userList .button-group,
+#mesaList .button-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#userList button,
+#productList button,
+#mesaList button {
+    margin-left: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.95rem;
+}
+
+.form-container {
+    background: #f0f0f5;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #fff;
+}
+
+.form-container textarea {
+    resize: vertical;
+}
+
+@media (max-width: 700px) {
+    main {
+        padding: 1rem;
+    }
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    nav ul {
+        gap: 1rem;
+    }
+}

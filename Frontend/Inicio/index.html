@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Restaurante </h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#menu" class="nav-link">Menú</a></li>
+                <li><a href="#pedidos" class="nav-link">Pedidos</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Experiencia Culinaria Excepcional</h1>
+            <p>Descubre sabores únicos en un ambiente sofisticado y acogedor</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="showSection('menu')">Ver Menú</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Plato gourmet">
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Nuestro Menú</h2>
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">Todos</button>
+            </div>
+            <div class="menu-grid" id="menuGrid">
+                <!-- Los productos se cargarán dinámicamente -->
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Pedidos Section -->
+    <section id="pedidos" class="pedidos-section">
+        <div class="container">
+            <h2 class="section-title">Realizar Pedido</h2>
+            <div class="pedido-container">
+                <div class="pedido-form">
+                    <h3>Información del Cliente</h3>
+                    <form id="pedidoClienteForm">
+                        <div class="form-group">
+                            <label for="nombrePedido">Nombre</label>
+                            <input type="text" id="nombrePedido" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cedulaPedido">Cédula</label>
+                            <input type="text" id="cedulaPedido" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefonoPedido">Teléfono</label>
+                            <input type="tel" id="telefonoPedido" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mesaPedido">Mesa</label>
+                            <select id="mesaPedido" required>
+                                <option value="">Seleccionar mesa</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="carrito">
+                    <h3>Tu Pedido</h3>
+                    <div class="carrito-items" id="carritoItems">
+                        <p class="carrito-vacio">No hay productos en el carrito</p>
+                    </div>
+                    <div class="carrito-total">
+                        <strong>Total: $<span id="carritoTotal">0.00</span></strong>
+                    </div>
+                    <button class="btn btn-primary" id="confirmarPedido" disabled>Confirmar Pedido</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Registrarse</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Nombre</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Contraseña</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </form>
+            <p class="login-link">¿Ya tienes cuenta? <a href="#" onclick="showLoginModal()">Inicia sesión aquí</a></p>
+        </div>
+    </div>
+
+    <!-- Admin Section -->
+    <section id="admin" class="admin-section hidden">
+        <div class="container">
+            <h2 class="section-title">Panel de Administración</h2>
+            <p>Bienvenido, administrador. Aquí puedes gestionar productos, reservas, pedidos y usuarios.</p>
+            <!-- Puedes agregar tablas, formularios o enlaces de gestión aquí -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Restaurante Elegante</h3>
+                    <p>Experiencia culinaria excepcional desde 1999</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📍 Calle Chacalitos</p>
+                    <p>📞 0963943520</p>
+                    <p>✉️ info@restaurante.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Horarios</h4>
+                    <p>Lunes - Viernes: 11:00 - 22:00</p>
+                    <p>Sábados: 12:00 - 23:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 1999 Restaurante. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <nav>
+        <h2>Administración</h2>
+        <ul>
+            <li><a href="#usuarios">Usuarios</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#mesas">Mesas</a></li>
+            <li><a href="../Login/index.html" onclick="logout()">Cerrar sesión</a></li>
+
+        </ul>
+    </nav>
+    <main>
+        <section id="usuarios">
+            <h3>Gestión de Usuarios</h3>
+            <button onclick="showUserForm()">Crear Usuario</button>
+
+            </div>
+            <div id="userList"></div>
+            <div id="userFormContainer" style="display:none;"></div>
+        </section>
+        <section id="productos">
+            <h3>Gestión de Productos</h3>
+            <button onclick="showProductForm()">Crear Producto</button>
+            <div id="productList"></div>
+            <div id="productFormContainer" style="display:none;"></div>
+        </section>
+        <section id="mesas">
+            <h3>Gestión de Mesas</h3>
+            <button onclick="showMesaForm()">Crear Mesa</button>
+            <div id="mesaList"></div>
+            <div id="mesaFormContainer" style="display:none;"></div>
+        </section>
+        
+    </main>
+    <script src="admin.js" defer></script>
+</body>
+</html>
