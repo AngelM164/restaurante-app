@@ -12,6 +12,11 @@ use App\Http\Controllers\PagoController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\UserController;
 
+Route::get('/ping', function () {
+    return response()->json(['message' => 'pong']);
+});
+
+
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
