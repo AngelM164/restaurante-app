@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://restaurante-app-production.up.railway.app/api';
 const authToken = localStorage.getItem('authToken');
 
 async function apiRequest(endpoint, options = {}) {
